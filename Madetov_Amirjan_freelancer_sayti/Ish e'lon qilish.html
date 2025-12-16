@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <title>Freelancer.uz - Ish e'lon qilish</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Freelancer.uz</h1>
+      <p>O'zbekistondagi bo'sh ish o'rinlari</p>
+    </div>
+    <div class="contact-info">
+      📞 +998 90 123 45 67<br>
+      📧 freelanceruzinfo@gmail.com
+      <div class="language-switcher">
+        🌐
+        <select id="languageSelect">
+          <option value="uz">UZ</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </div>    
+  </header>
+
+  <nav>
+    <a href="Bosh sahifa.html" id="home-link">Bosh sahifa</a>
+    <a href="Bo'sh ish o'rinlari.html" id="jobs-link">Bo'sh ish o'rinlari</a>
+    <a href="Ish e'lon qilish.html" id="jobswrite-link">Ish e'lon qilish</a>
+    <a href="Qoldirilgan arizalar.html" id="search-link">Qoldirilgan arizalar</a>
+    <a href="izlash.html" id="search-link">Izlash</a>
+    <a href="aloqa.html" id="contact-link">Aloqa</a>
+  </nav>
+  <main>
+    <form>
+        <form action="#" method="post">
+            <label for="jobTitle">Ish nomi:</label>
+            <input type="text" id="jobTitle" name="jobTitle" required>
+        
+            <label for="companyName">Kompaniya nomi:</label>
+            <input type="text" id="companyName" name="companyName" required>
+        
+            <label for="region">Joylashuvi (Viloyat):</label>
+            <select id="region" name="region" required>
+              <option value="">Viloyatni tanlang</option>
+              <option value="Toshkent">Toshkent</option>
+              <option value="Andijon">Andijon</option>
+              <option value="Farg'ona">Farg'ona</option>
+              <option value="Namangan">Namangan</option>
+              <option value="Samarqand">Samarqand</option>
+              <option value="Buxoro">Buxoro</option>
+              <option value="Qashqadaryo">Qashqadaryo</option>
+              <option value="Surxondaryo">Surxondaryo</option>
+              <option value="Xorazm">Xorazm</option>
+              <option value="Navoiy">Navoiy</option>
+              <option value="Jizzax">Jizzax</option>
+              <option value="Sirdaryo">Sirdaryo</option>
+              <option value="Qoraqalpog‘iston">Qoraqalpog‘iston</option>
+            </select>
+        
+            <label for="jobType">Ish turi:</label>
+            <select id="jobType" name="jobType" required>
+              <option value="">Ish turini tanlang</option>
+              <option value="To‘liq stavka">To‘liq stavka</option>
+              <option value="Yarim stavka">Yarim stavka</option>
+              <option value="Masofaviy">Masofaviy</option>
+              <option value="Stajirovka">Stajirovka</option>
+            </select>
+        
+            <label for="salary">Maosh (so'm):</label>
+            <input type="number" id="salary" name="salary" required>
+        
+            <button type="submit">Yuborish</button>
+      </form>
+  </main>
+
+  <footer>
+    <div id="footer-text">&copy; 2025 Freelancer.uz. Barcha huquqlar himoyalangan.</div>
+  </footer>

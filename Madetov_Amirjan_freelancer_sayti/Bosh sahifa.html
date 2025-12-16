@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <title>Freelancer.uz - Bosh sahifa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Freelancer.uz</h1>
+      <p>O'zbekistondagi bo'sh ish o'rinlari</p>
+    </div>
+    <div class="contact-info">
+      📞 +998 90 123 45 67<br>
+      📧 freelanceruzinfo@gmail.com
+      <div class="language-switcher">
+        🌐
+        <select id="languageSelect">
+          <option value="uz">UZ</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </div>    
+  </header>
+
+  <nav>
+    <a href="Bosh sahifa.html" id="home-link">Bosh sahifa</a>
+    <a href="Bo'sh ish o'rinlari.html" id="jobs-link">Bo'sh ish o'rinlari</a>
+    <a href="Ish e'lon qilish.html" id="jobswrite-link">Ish e'lon qilish</a>
+    <a href="Qoldirilgan arizalar.html" id="search-link">Qoldirilgan arizalar</a>
+    <a href="izlash.html" id="search-link">Izlash</a>
+    <a href="aloqa.html" id="contact-link">Aloqa</a>
+  </nav>
+
+  <section class="freelance-section">
+    <div class="freelance-overlay">
+      <h2 id="welcome-heading">Xush kelibsiz!</h2>
+      <p id="welcome-description">Bu yerda siz eng so'nggi bo'sh ish o'rinlarini topishingiz mumkin.</p>
+      <div class="job-buttons">
+        <a href="Bo'sh ish o'rinlari.html" class="action-button" id="find-job-button">Ish topish</a>
+        <a href="Ish e'lon qilish.html" class="action-button" id="post-job-button">Ish e'lon qilish</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div id="footer-text">&copy; 2025 Freelancer.uz. Barcha huquqlar himoyalangan.</div>
+  </footer>
+
+  <script>
+    const translations = {
+      uz: {
+        title: "Freelancer.uz - Bosh sahifa",
+        heading: "Xush kelibsiz!",
+        description: "Bu yerda siz eng so'nggi bo'sh ish o'rinlarini topishingiz mumkin.",
+        nav: ["Bosh sahifa", "Bo'sh ish o'rinlari", "Ish e'lon qilish", "Qoldirilgan arizalar", "Izlash", "Aloqa"],
+        footer: "&copy; 2025 Freelancer.uz. Barcha huquqlar himoyalangan.",
+        buttons: ["Ish topish", "Ish e'lon qilish"]
+      },
+      ru: {
+        title: "Freelancer.uz - Главная страница",
+        heading: "Добро пожаловать!",
+        description: "Здесь вы можете найти последние вакансии.",
+        nav: ["Главная", "Вакансии", "Размещение вакансий", "Поданные заявки", "Поиск", "Контакты"],
+        footer: "&copy; 2025 Freelancer.uz. Все права защищены.",
+        buttons: ["Найти работу", "Разместить вакансию"]
+      },
+      en: {
+        title: "Freelancer.uz - Home",
+        heading: "Welcome!",
+        description: "Here you can find the latest job vacancies.",
+        nav: ["Home", "Job Vacancies", "Job posting", "Abandoned applications", "Search", "Contact"],
+        footer: "&copy; 2025 Freelancer.uz. All rights reserved.",
+        buttons: ["Find a job", "Post a job"]
+      }
+    };
+
+    const elements = {
+      title: document.querySelector('title'),
+      heading: document.querySelector('#welcome-heading'),
+      description: document.querySelector('#welcome-description'),
+      navLinks: document.querySelectorAll('nav a'),
+      footer: document.querySelector('#footer-text'),
+      buttons: document.querySelectorAll('.action-button')
+    };
+
+    document.getElementById('languageSelect').addEventListener('change', (e) => {
+      const lang = e.target.value;
+      const t = translations[lang];
+
+      elements.title.textContent = t.title;
+      elements.heading.textContent = t.heading;
+      elements.description.textContent = t.description;
+      elements.footer.innerHTML = t.footer;
+      
+      elements.navLinks.forEach((link, i) => {
+        link.textContent = t.nav[i];
+      });
+
+      elements.buttons[0].textContent = t.buttons[0];
+      elements.buttons[1].textContent = t.buttons[1];
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <title>Freelancer.uz - Aloqa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Freelancer.uz</h1>
+      <p>O'zbekistondagi bo'sh ish o'rinlari</p>
+    </div>
+    <div class="contact-info">
+      📞 +998 90 123 45 67<br>
+      📧 freelanceruzinfo@gmail.com
+      <div class="language-switcher">
+        🌐
+        <select id="languageSelect">
+          <option value="uz">UZ</option>
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+    </div>    
+  </header>
+  <nav>
+    <a href="Bosh sahifa.html">Bosh sahifa</a>
+    <a href="Bo'sh ish o'rinlari.html">Bo'sh ish o'rinlari</a>
+    <a href="Ish e'lon qilish.html" id="jobswrite-link">Ish e'lon qilish</a>
+    <a href="Qoldirilgan arizalar.html" id="search-link">Qoldirilgan arizalar</a>
+    <a href="izlash.html">Izlash</a>
+    <a href="aloqa.html">Aloqa</a>
+  </nav>
+  <main>
+    <h2>Bog‘lanish</h2>
+    <p>Biz bilan quyidagi ma'lumotlar orqali bog‘lanishingiz mumkin:</p>
+    <ul>
+      <li><strong>Telefon:</strong> +998 90 123 45 67</li>
+      <li><strong>Email:</strong> freelanceruzinfo@gmail.com</li>
+      <li><strong>Manzil:</strong> Toshkent shahri, Amir Temur shox ko'chasi, 117-uy</li>
+    </ul>
+    <p>Yoki bizga xabar yuboring:</p>
+    <form>
+      <input type="text" placeholder="Ismingiz" required /><br><br>
+      <input type="email" placeholder="Email manzilingiz" required /><br><br>
+      <textarea placeholder="Xabaringiz..." rows="5" required></textarea><br><br>
+      <button type="submit">Yuborish</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Freelancer.uz. Barcha huquqlar himoyalangan.
+
+    <script>
+      const translations = {
+        uz: {
+          title: "LEX.UZ - Aloqa",
+          heading: "Bog‘lanish",
+          desc: "Biz bilan quyidagi ma'lumotlar orqali bog‘lanishingiz mumkin:",
+          address: "Toshkent shahri, Mustaqillik ko'chasi, 12-uy",
+          msg: "Yoki bizga xabar yuboring:",
+          placeholders: {
+            name: "Ismingiz",
+            email: "Email manzilingiz",
+            message: "Xabaringiz..."
+          },
+          sendBtn: "Yuborish",
+          nav: ["Bosh sahifa", "Qonunlar", "Farmonlar", "Izlash", "Aloqa"],
+          footer: "Barcha huquqlar himoyalangan."
+        },
+        ru: {
+          title: "LEX.UZ - Контакты",
+          heading: "Связаться с нами",
+          desc: "Вы можете связаться с нами по следующим данным:",
+          address: "г. Ташкент, ул. Мустакиллик, дом 12",
+          msg: "Или отправьте нам сообщение:",
+          placeholders: {
+            name: "Ваше имя",
+            email: "Ваш email",
+            message: "Ваше сообщение..."
+          },
+          sendBtn: "Отправить",
+          nav: ["Главная", "Законы", "Указы", "Поиск", "Контакты"],
+          footer: "Все права защищены."
+        },
+        en: {
+          title: "LEX.UZ - Contact",
+          heading: "Contact Us",
+          desc: "You can contact us using the following information:",
+          address: "Tashkent, Mustaqillik street, house 12",
+          msg: "Or send us a message:",
+          placeholders: {
+            name: "Your Name",
+            email: "Your Email",
+            message: "Your Message..."
+          },
+          sendBtn: "Send",
+          nav: ["Home", "Laws", "Decrees", "Search", "Contact"],
+          footer: "All rights reserved."
+        }
+      };
+    
+      const elements = {
+        title: document.querySelector("title"),
+        heading: document.querySelector("main h2"),
+        desc: document.querySelectorAll("main p")[0],
+        msg: document.querySelectorAll("main p")[1],
+        addressLi: document.querySelectorAll("ul li")[2],
+        nameInput: document.querySelector("input[type='text']"),
+        emailInput: document.querySelector("input[type='email']"),
+        messageTextarea: document.querySelector("textarea"),
+        sendBtn: document.querySelector("button"),
+        navLinks: document.querySelectorAll("nav a"),
+        footer: document.querySelector("footer")
+      };
+    
+      document.getElementById("languageSelect").addEventListener("change", (e) => {
+        const lang = e.target.value;
+        const t = translations[lang];
+    
+        elements.title.textContent = t.title;
+        elements.heading.textContent = t.heading;
+        elements.desc.textContent = t.desc;
+        elements.msg.textContent = t.msg;
+        elements.addressLi.innerHTML = `<strong>Manzil:</strong> ${t.address}`;
+        elements.nameInput.placeholder = t.placeholders.name;
+        elements.emailInput.placeholder = t.placeholders.email;
+        elements.messageTextarea.placeholder = t.placeholders.message;
+        elements.sendBtn.textContent = t.sendBtn;
+        elements.navLinks.forEach((link, i) => {
+          link.textContent = t.nav[i];
+        });
+        elements.footer.innerHTML = `&copy; 2025 Lex.uz. ${t.footer}`;
+      });
+    </script>
+  </footer>
+</body>
+</html>
